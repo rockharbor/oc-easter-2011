@@ -2,8 +2,6 @@
 
 	$.oceaster = {
 
-		threshold: 20,
-
 		init: function() {
 			$('[data-scrolltrigger]').each(function(i) {
 				var self = $(this);
@@ -13,24 +11,13 @@
 					$.oceaster['section'+(i+1)+'Init'](self);
 				}
 			});
-			$.oceaster.update({}, true);
+			$.oceaster.update();
 		},
 
-		update: function(event, force) {
-			if (force == undefined) { 
-				force = false;
-			}
+		update: function(event) {
 			var scrollY = $(window).scrollTop();
 			$('#debug').html(scrollY);
-			$('[data-scrolltrigger]').filter(function() {
-				if (force) {
-					return true;
-				}
-				var self = $(this);
-				if (scrollY > self.data('oceaster.start') - $.oceaster.threshold && scrollY < self.data('oceaster.end') + $.oceaster.threshold) {
-					return true;
-				}
-			}).each(function() {
+			$('[data-scrolltrigger]').each(function() {
 				var self = $(this);
 				var amt = self.data('oceaster.end') - self.data('oceaster.start');
 				var scrolled = scrollY - self.data('oceaster.start');
