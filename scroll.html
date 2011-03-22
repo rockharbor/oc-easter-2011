@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>OC Easter</title>
+		<meta charset="utf-8" />
+		<meta name="title" content="OC Easter" />
+		<meta name="description" content="Orange County Easter celebration at the Fairgrounds" />
+		<meta name="keywords" content="orange county, easter, fairgrounds, francis chan" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/timeline.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$.oceaster.init();
+				$(window).bind('scroll', $.oceaster.update);
+			});
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/960.css" />
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	</head>
+	<body>
+		<div id="debug"></div>
+		<section data-scrolltrigger="section1Trigger" data-triggerstart="100" data-triggerend="200">
+			<div id="opacsplit">
+				Some text
+			</div>
+		</section>
+		<section data-scrolltrigger="section2Trigger" data-triggerstart="500" data-triggerend="700">
+		</section>
+	</body>
+</html>
