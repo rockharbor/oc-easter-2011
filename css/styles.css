@@ -11,7 +11,7 @@
 
 
 */
-.html {
+html {
 	width: 100%;
 }
 .wrapper {
@@ -22,9 +22,23 @@ section {
 	display: block;
 	height: 1000px;
 	border: 1px solid #000;
+	position: relative;
 }
-#opacsplit {
+#opacsplit, .opacsplit {
 	position: absolute;
 	top: 300px;
 	left: 30px;
+}
+.html5 p {
+	position: absolute;
+	top: 30px;
+	left: 200px;
+}
+#html5 {
+	position: absolute;
+	top: 0;
+}
+#html5 p {
+	position: absolute;
+	left: 100px;
 }
