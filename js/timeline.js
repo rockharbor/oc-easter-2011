@@ -2,8 +2,10 @@
 
 	$.oceaster = {
 
+		_debug: true,
+
 		init: function() {
-			$.oceaster._insection = $('section:first');
+			$.oceaster._setupDebug();
 			$('[data-scrolltrigger]').each(function(i) {
 				var self = $(this);
 				self.data('oceaster.start', Number(self.attr('data-triggerstart')));
@@ -17,7 +19,10 @@
 
 		update: function(event) {
 			var scrollY = $(window).scrollTop();
-			$('#debug').html(scrollY);
+			if ($.oceaster._debug) {
+				$('#_section').html('');
+				$('#_line').html(scrollY);
+			}
 			$('[data-scrolltrigger]').each(function() {
 				var self = $(this);
 				var amt = self.data('oceaster.end') - self.data('oceaster.start');
@@ -28,6 +33,10 @@
 				}
 				if (percent > 1) {
 					percent = 1;
+				}
+				if ($.oceaster._debug && $.oceaster.withinSection(self)) {
+					var msg = '['+self.attr('data-scrolltrigger')+']<br />'+self.data('oceaster.start')+'-'+self.data('oceaster.end')+'<br />'+Math.floor(percent*100)+'%<br />';
+					$('#_section').html($('#_section').html()+msg);
 				}
 				$.oceaster[self.attr('data-scrolltrigger')](self, percent);
 			});
@@ -119,10 +128,8 @@
 			var threshold = 1/$('#fliplines div').length;
 			$('#fliplines div').each(function(i) {
 				var perc = i/$('#fliplines div').length;
-				//console.log(perc+' < '+percent+' && '+perc+' > '+(percent-threshold));
 				if (perc < percent && perc > percent-threshold) {
 					var self = $(this);
-					console.log('scrolling to '+self.position().top);
 					self.parent(':not(:animated)').animate({scrollTop: self.data('starttop')});
 				}
 			})
@@ -139,6 +146,37 @@
 		withinSection: function(section) {
 			var scrollY = $(window).scrollTop();
 			return scrollY > section.data('oceaster.start') && scrollY < section.data('oceaster.end');
+		},
+
+		_setupDebug: function() {
+			if (!$.oceaster._debug) {
+				return;
+			}
+			$('body').append('<div id="_debug"><span id="_line">0</span><span id="_section"></span></div>');
+			$('body').append('<div id="_trigger"></div>');
+			$('#_debug').css({
+				position:'fixed',
+				top: 0,
+				right: 0,
+				background: '#ff0000',
+				color: '#fff',
+				padding: 5,
+				fontWeight: 'bold'
+			});
+			$('#_debug span').css({
+				display:'block',
+				textAlign:'right'
+			});
+			$('[data-scrolltrigger]').each(function(i) {
+				$('body').append('<div id="_trigger'+i+'"></div>');
+				$('#_trigger'+i).css({
+					height: 1,
+					width: '100%',
+					position:'fixed',
+					background: '1px solid #ff0000',
+					top: $(this).attr('data-triggerstart')
+				});
+			});
 		}
 
 	}	

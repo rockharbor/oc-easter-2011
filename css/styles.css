@@ -1,16 +1,3 @@
-#debug {
-	position:fixed;
-	top: 0;
-	right: 0;
-	background: #ff0000;
-	color: #fff;
-	padding: 5px;
-	font-weight: bold;
-}
-/*
-
-
-*/
 html {
 	width: 100%;
 }
