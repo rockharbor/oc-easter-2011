@@ -75,20 +75,11 @@
 		},
 
 
-		html5Trigger1Init: function(section) {	$.oceaster._html5triggerInit(section);	},
-		html5Trigger1: function(section, percent) { $.oceaster._html5trigger(section, percent); },
-		html5Trigger2Init: function(section) { $.oceaster._html5triggerInit(section); },
-		html5Trigger2: function(section, percent) { $.oceaster._html5trigger(section, percent); },
-		html5Trigger3Init: function(section) { $.oceaster._html5triggerInit(section);	},
-		html5Trigger3: function(section, percent) { $.oceaster._html5trigger(section, percent); },
-		html5Trigger4Init: function(section) { $.oceaster._html5triggerInit(section);	},
-		html5Trigger4: function(section, percent) { $.oceaster._html5trigger(section, percent); },
-
-		_html5triggerInit: function(section) {
+		html5TriggerInit: function(section) {
 			var p = $('p', section);
 			p.data('starttop', p.position().top);
 		},
-		_html5trigger: function(section, percent) {
+		html5Trigger: function(section, percent) {
 			var p = $('p', section);
 			if ($.oceaster.withinSection(section)) {
 				p.css({
@@ -99,7 +90,7 @@
 			}
 		},
 
-		html5TriggerInit : function(section) {
+		html5FollowTriggerInit : function(section) {
 			var p = $('p', section);
 			p.data('starttop', p.position().top);
 			p.css({
@@ -107,7 +98,7 @@
 			});
 		},
 		
-		html5Trigger: function(section, percent) {
+		html5FollowTrigger: function(section, percent) {
 			if (!$.oceaster.withinSection(section)) {
 				$('#html5 p').data('html5ptop', -100);
 			}
@@ -135,6 +126,14 @@
 					self.parent(':not(:animated)').animate({scrollTop: self.data('starttop')});
 				}
 			})
+		},
+
+		fadeInOutTriggerInit: function(section) {
+			$('p', section).hide();
+		},
+
+		fadeInOutTrigger: function(section, percent) {
+			percent < 1 ? $('p', section).fadeIn() : $('p', section).fadeOut();
 		},
 
 		withinSection: function(section) {
