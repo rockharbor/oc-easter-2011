@@ -118,6 +118,25 @@
 			});
 		},
 
+		flipLinesTriggerInit: function(section) {
+			$('#fliplines div').each(function() {
+				$(this).data('starttop', $(this).position().top);
+			});
+		},
+
+		flipLinesTrigger: function(section, percent) {
+			var threshold = 1/$('#fliplines div').length;
+			$('#fliplines div').each(function(i) {
+				var perc = i/$('#fliplines div').length;
+				//console.log(perc+' < '+percent+' && '+perc+' > '+(percent-threshold));
+				if (perc < percent && perc > percent-threshold) {
+					var self = $(this);
+					console.log('scrolling to '+self.position().top);
+					self.parent(':not(:animated)').animate({scrollTop: self.data('starttop')});
+				}
+			})
+		},
+
 		withinSection: function(section) {
 			var scrollY = $(window).scrollTop();
 			return scrollY > section.data('oceaster.start') && scrollY < section.data('oceaster.end');

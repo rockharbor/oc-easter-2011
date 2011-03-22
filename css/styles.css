@@ -42,3 +42,12 @@ section {
 	position: absolute;
 	left: 100px;
 }
+#fliplines {
+	height: 20px;
+	overflow: hidden;
+	left: 300px;
+	position: absolute;
+}
+#fliplines div {
+	margin-bottom: 10px;
+}
