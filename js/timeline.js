@@ -42,41 +42,43 @@
 			});
 		},
 
-		section1TriggerInit: function(section) {
+		implodeTriggerInit: function(section) {
 			var c = 1;
 			for (var i=1; i<7; i++) {
-				var clone = $('#opacsplit').clone();
+				var clone = $('h1[class!="opacsplit"]', section).clone();
 				clone.css({
-					top: $('#opacsplit').position().top + (i%2>0 ? 10*c : -10*c),
-					opacity: .7 - c*10/100
+					top:  $('h1', section).position().top + (i%2>0 ? 50*c : -50*c),
+					opacity: c*20/100/.7
 				}).removeAttr('id').addClass('opacsplit');
 				section.append(clone);
 				if (i%2==0) {
 					c++;
 				}
+				clone.data('startopac', clone.css('opacity'));
 				clone.data('starttop', clone.position().top);
 			}
-			$('#opacsplit').css({visibility: 'hidden'});
+			 $('h1', section).css({visibility: 'hidden'});
 		},
 
-		section1Trigger: function(section, percent) {
-			var dest = $('#opacsplit');
-			$('div.opacsplit', section).each(function(i) {
+		implodeTrigger: function(section, percent) {
+			var dest = $('h1', section);
+			$('h1.opacsplit', section).each(function() {
 				var self = $(this);
 				var dist = dest.position().top - self.data('starttop');
 				if (percent < .5) {
 					self.css({
 						top: self.data('starttop') + percent/.5*dist,
-						visibility: 'visible'
+						visibility: 'visible',
+						opacity: percent / self.data('startopac')
 					});
-					$('#opacsplit').css({
+					 $('h1[class!="opacsplit"]', section).css({
 						visibility: 'hidden'
 					});
 				} else {
 					self.css({
 						visibility: 'hidden'
 					});
-					$('#opacsplit').css({
+					$('h1[class!="opacsplit"]', section).css({
 						visibility: 'visible'
 					});
 				}
@@ -89,11 +91,17 @@
 
 		followerTrigger: function(section, percent) {
 			if ($.oceaster.withinSection(section)) {
+
 				section.css({
-					top: section.data('starttop') + 200*percent
+					top: section.data('starttop') + 500*percent,
+					opacity: percent / .6
 				});
 				section.siblings('h1').css({
 					top: section.position().top
+				});
+			} else {
+				section.css({
+					opacity: 0
 				});
 			}
 		},
