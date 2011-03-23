@@ -84,38 +84,19 @@
 		},
 
 
-		html5TriggerInit: function(section) {
-			var p = $('p', section);
-			p.data('starttop', p.position().top);
+		followerTriggerInit: function(section) {
+			section.data('starttop', section.position().top);
 		},
-		html5Trigger: function(section, percent) {
-			var p = $('p', section);
+
+		followerTrigger: function(section, percent) {
 			if ($.oceaster.withinSection(section)) {
-				p.css({
-					top: p.data('starttop') + 200*percent
+				section.css({
+					top: section.data('starttop') + 200*percent
 				});
-
-				$('#html5 p').data('html5ptop', p.offset().top);
+				section.siblings('h1').css({
+					top: section.position().top
+				});
 			}
-		},
-
-		html5FollowTriggerInit : function(section) {
-			var p = $('p', section);
-			p.data('starttop', p.position().top);
-			p.css({
-				opacity: 0
-			});
-		},
-		
-		html5FollowTrigger: function(section, percent) {
-			if (!$.oceaster.withinSection(section)) {
-				$('#html5 p').data('html5ptop', -100);
-			}
-			var p = $('p', section);
-			p.css({
-				top: p.data('html5ptop'),
-				opacity: 1
-			});
 		},
 
 		scrollDownTriggerInit: function(section) {
@@ -162,7 +143,7 @@
 			}
 
 			var img = new Image();
-			img.src = 'img/coming_soon.png';
+			img.src = 'img/degression.png';
 
 			img.onload = function() {
 				$('canvas', section)[0].width = img.width;
