@@ -119,15 +119,17 @@
 		},
 
 		flipLinesTriggerInit: function(section) {
-			$('#fliplines div').each(function() {
+			$(section).children().each(function() {
 				$(this).data('starttop', $(this).position().top);
 			});
 		},
 
 		flipLinesTrigger: function(section, percent) {
-			var threshold = 1/$('#fliplines div').length;
-			$('#fliplines div').each(function(i) {
-				var perc = i/$('#fliplines div').length;
+			var sec = $(section);
+			var children = $(section).children();
+			var threshold = 1/children.length;
+			children.each(function(i) {
+				var perc = i/children.length;
 				if (perc < percent && perc > percent-threshold) {
 					var self = $(this);
 					self.parent(':not(:animated)').animate({scrollTop: self.data('starttop')});

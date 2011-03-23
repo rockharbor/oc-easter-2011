@@ -8,7 +8,7 @@ body, html {
 }
 #content {
 	text-align: center;
-	width: 700px;
+	width: 900px;
 	margin: auto;
 	height: 22000px;
 }
@@ -47,6 +47,29 @@ Article placements
 #sec3art2 { top: 9883px; }
 #sec3art3 { top: 10487px; }
 #sec3art4 { top: 14403px; }
+
+/*
+flip lines
+*/
+#sec1art4 h1 {
+	position: absolute;
+	right: 0;
+	top: 70px;
+}
+#sec1art4 h1:first-child {
+	top: 0;
+	left: 10px;
+}
+#sec1art4 hgroup {
+	height: 70px;
+	overflow: hidden;
+	display: block;
+	position: absolute;
+	right: 300px;
+}
+#sec1art4 hgroup h2 {
+	margin-bottom: 20px;
+}
 
 /*
 Headers
@@ -94,15 +117,6 @@ p {
 #html5 p {
 	position: absolute;
 	left: 100px;
-}
-#fliplines {
-	height: 20px;
-	overflow: hidden;
-	left: 300px;
-	position: absolute;
-}
-#fliplines div {
-	margin-bottom: 10px;
 }
 
 #fade1 p {
