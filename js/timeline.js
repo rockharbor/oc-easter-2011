@@ -83,7 +83,6 @@
 			});
 		},
 
-
 		followerTriggerInit: function(section) {
 			section.data('starttop', section.position().top);
 		},
@@ -198,9 +197,76 @@
 			}
 		},
 
+		scratchTriggerInit: function(section) {
+			$.oceaster.scratch = $('canvas', section);
+
+			$.oceaster.scratch.css({position: 'absolute', zIndex: 3});
+			$.oceaster.scratch.parent().append($.oceaster.scratch.clone().attr('id', 'secret').css({zIndex:2}));
+			$.oceaster.scratch.parent().append($.oceaster.scratch.clone().attr('id', 'background').css({zIndex:1}));
+
+			if ($.oceaster.scratch[0].getContext) {
+				var bkgContext = $('#background', section)[0].getContext('2d');
+				var secretContext = $('#secret', section)[0].getContext('2d');
+				var scratchContext = $.oceaster.scratch[0].getContext('2d');
+
+				var bkg = new Image();
+				bkg.src = 'img/scratch_background.png';
+				bkg.onload = function() {
+					bkgContext.drawImage(bkg, 0, 0);
+					$.oceaster.scratch.width = bkg.width;
+					$.oceaster.scratch.height = bkg.height;
+				}
+
+				var secret = new Image();
+				secret.src = 'img/scratch.png';
+				secret.onload = function() {
+					secretContext.drawImage(secret, 0, 0);
+				}
+
+				scratchContext.fillStyle = 'white';
+				scratchContext.fillRect(0, 0, $.oceaster.scratch.width(), $.oceaster.scratch.height());
+
+				$.oceaster.scratch.click($.oceaster._draw);
+				$.oceaster.scratch.mousedown($.oceaster._startDrag);
+				$.oceaster.scratch.mouseup($.oceaster._stopDrag);
+				$.oceaster.scratch.mouseleave($.oceaster._stopDrag);
+			}
+		},
+
+		scratchTrigger: function() {
+
+		},
+
 		withinSection: function(section) {
 			var scrollY = $(window).scrollTop();
 			return scrollY > section.data('oceaster.start') && scrollY < section.data('oceaster.end');
+		},
+
+		_startDrag: function() {
+			$.oceaster.scratch.mousemove($.oceaster._draw);
+		},
+
+		_stopDrag: function() {
+			$.oceaster.scratch.unbind('mousemove', $.oceaster._draw);
+		},
+
+		_draw: function(event) {
+			var context = $.oceaster.scratch[0].getContext('2d');
+			context.globalCompositeOperation = 'destination-out';
+
+			var mouseX = event.pageX - $.oceaster.scratch.offset().left;
+			var mouseY = event.pageY - $.oceaster.scratch.offset().top;
+
+			if ($.oceaster.brush == undefined) {
+				$.oceaster.brush = new Image();
+				$.oceaster.brush.src = 'img/small_brush.png';
+				$.oceaster.brush.onload = function() {
+					context.drawImage($.oceaster.brush, mouseX-this.width/2, mouseY-this.height/2);
+				}
+			} else {
+				console.log($.oceaster.brush.width);
+				context.drawImage($.oceaster.brush, mouseX-$.oceaster.brush.width/2, mouseY-$.oceaster.brush.height/2);
+			}
 		},
 
 		_setupDebug: function() {
