@@ -136,7 +136,6 @@
 		},
 
 		flipLinesTrigger: function(section, percent) {
-			var sec = $(section);
 			var children = $(section).children();
 			var threshold = 1/children.length;
 			children.each(function(i) {
@@ -146,6 +145,34 @@
 					self.parent(':not(:animated)').animate({scrollTop: self.data('starttop')});
 				}
 			})
+		},
+
+		viewportTriggerInit: function(section) {
+			var mask = $('canvas', section);
+			var ctx = mask[0].getContext('2d');
+			section.data('context', ctx);
+		},
+
+		viewportTrigger: function(section, percent) {
+			var ctx = section.data('context');
+			
+			if (!$.oceaster.withinSection(section)) {
+				ctx.clearRect(0, 0, 1000, 1000);
+				return;
+			}
+
+			var img = new Image();
+			img.src = 'img/coming_soon.png';
+
+			img.onload = function() {
+				$('canvas', section)[0].width = img.width;
+				$('canvas', section)[0].height = img.height;
+				
+				ctx.beginPath();
+				ctx.rect(0, img.height*percent + 1, img.width, 80);
+				ctx.clip();
+				ctx.drawImage(img, 0, 0);
+			}
 		},
 
 		fadeInOutTrigger: function(section, percent) {

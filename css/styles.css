@@ -35,9 +35,8 @@ Article placements
 #sec2art3 { top: 4390px; }
 #sec2art4 { top: 4646px; }
 #sec2art9 { top: 6488px; }
-#sec2art10 { top: 6624px; }
-#sec2art11 { top: 7891px; }
-#sec2art12 { top: 7982px; }
+#sec2art10 { top: 7891px; }
+#sec2art11 { top: 7982px; }
 #sec2art12 { top: 8940px; }
 #sec3art1 { top: 9133px; }
 #sec3art2 { top: 9883px; }
@@ -83,6 +82,13 @@ scroll down
 	position: absolute;
 }
 
+#sec2art9 p {
+	position: absolute;
+	top: 200px;
+	left: 0;
+	display: none;
+	/* background image */
+}
 
 /*
 Headers
