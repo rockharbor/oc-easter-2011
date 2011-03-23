@@ -184,17 +184,28 @@
 		maskTrigger: function(section, percent) {
 			var ctx = section.data('context');
 
+			var brush = new Image();
+			brush.src = 'img/big_brush.png';
+			
+
 			var img = new Image();
-			img.src = 'img/coming_soon.png';
+			img.src = 'img/splatter_4.png';
 
 			img.onload = function() {
+				if (brush.height == undefined || brush.height == 0) {
+					return;
+				}
 				$('canvas', section)[0].width = img.width;
-				$('canvas', section)[0].height = img.height;
+				$('canvas', section)[0].height = img.height + brush.height;
 
-				ctx.beginPath();
-				ctx.rect(0, 0, img.width, img.height*percent + 1);
-				ctx.clip();
 				ctx.drawImage(img, 0, 0);
+				ctx.globalCompositeOperation = 'destination-out';
+				ctx.fillRect(0, img.height*percent, img.width, img.height*(1-percent) - 1);
+				ctx.drawImage(brush, 0, img.height*percent - brush.height + 2);
+			}
+
+			brush.onload = function() {
+				img.onload();
 			}
 		},
 

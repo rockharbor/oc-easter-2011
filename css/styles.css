@@ -93,15 +93,27 @@ viewport
 /*
 mask
 */
+#sec2art10 canvas {
+	position: absolute;
+	top: 100px;
+	left: -300px;
+}
+#sec2art10 hgroup {
+	position: absolute;
+	left: 0;
+	top: 200px;
+	z-index: 1;
+}
 #sec2art10 hgroup h2 {
 	color: #000;
+	margin-bottom: 40px;
 }
 
 /*
 Headers
 */
 h1, h2 {
-	font-size: 70px;
+	font-size: 46px;
 	font-family: BebasNeueRegular, 'Lucida Sans', Helvetica, Arial, sans-serif;
 	color: #000;
 	text-align: left;
@@ -121,7 +133,7 @@ Global
 }
 p {
 	text-align: left;
-	font-size: 16px;
+	font-size: 21px;
 	font-family: ArvoRegular, 'Lucida Sans', Helvetica, Arial, sans-serif;
 	color: #999;
 }
