@@ -76,7 +76,7 @@ scroll down
 }
 
 /*
-
+viewport
 */
 #sec2art4 p {
 	position: absolute;
@@ -88,6 +88,13 @@ scroll down
 	left: 0;
 	display: none;
 	/* background image */
+}
+
+/*
+mask
+*/
+#sec2art10 hgroup h2 {
+	color: #000;
 }
 
 /*
@@ -107,10 +114,10 @@ h1, h2 {
 Global
 */
 .blue {
-	color: #00FFD0;
+	color: #00ffd0;
 }
 .red {
-	color: #00FFD0;
+	color: #ff663f;
 }
 p {
 	text-align: left;

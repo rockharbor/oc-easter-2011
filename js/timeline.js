@@ -175,6 +175,29 @@
 			}
 		},
 
+		maskTriggerInit: function(section) {
+			var mask = $('canvas', section);
+			var ctx = mask[0].getContext('2d');
+			section.data('context', ctx);
+		},
+
+		maskTrigger: function(section, percent) {
+			var ctx = section.data('context');
+
+			var img = new Image();
+			img.src = 'img/coming_soon.png';
+
+			img.onload = function() {
+				$('canvas', section)[0].width = img.width;
+				$('canvas', section)[0].height = img.height;
+
+				ctx.beginPath();
+				ctx.rect(0, 0, img.width, img.height*percent + 1);
+				ctx.clip();
+				ctx.drawImage(img, 0, 0);
+			}
+		},
+
 		fadeInOutTrigger: function(section, percent) {
 			if ($.oceaster.withinSection(section)) {
 				percent < 1 ? section.fadeIn('slow') : section.fadeOut('slow');
