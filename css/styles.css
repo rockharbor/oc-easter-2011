@@ -1,16 +1,79 @@
-html {
+body, html {
 	width: 100%;
 }
-.wrapper {
+#wrapper {
 	width: 100%;
-	height: 100%;
+	margin: auto;
+	background: url('../img/gradient.png') repeat-x 0 2716px;
+}
+#content {
+	text-align: center;
+	width: 700px;
+	margin: auto;
+	height: 22000px;
 }
 section {
-	display: block;
-	height: 1000px;
-	border: 1px solid #000;
+	
 	position: relative;
 }
+section article {
+	
+	position: relative;
+}
+/*
+Article placements
+*/
+#sec1art1 { top: 280px; }
+#sec1art2 { top: 973px; }
+#sec1art3 { top: 1497px; }
+#sec1art4 { top: 2267px; }
+#sec2art1 { top: 2979px; }
+#sec2art2 { top: 3570px; }
+#sec2art3 { top: 4390px; }
+#sec2art4 { top: 4646px; }
+#sec2art5 { top: 4985px; }
+#sec2art6 { top: 5314px; }
+#sec2art7 { top: 5641px; }
+#sec2art8 { top: 5969px; }
+#sec2art9 { top: 6488px; }
+#sec2art10 { top: 6624px; }
+#sec2art11 { top: 7891px; }
+#sec2art12 { top: 7982px; }
+#sec2art12 { top: 8940px; }
+#sec3art1 { top: 9133px; }
+#sec3art2 { top: 9883px; }
+#sec3art3 { top: 10487px; }
+#sec3art4 { top: 14403px; }
+
+/*
+Headers
+*/
+h1, h2 {
+	font-size: 70px;
+	font-family: BebasNeueRegular, 'Lucida Sans', Helvetica, Arial, sans-serif;
+	color: #000;
+	text-align: left;
+}
+.inverse h1, .inverse h2 {
+	color: #fff;
+}
+
+/*
+Global
+*/
+.blue {
+	color: #00FFD0;
+}
+.red {
+	color: #00FFD0;
+}
+p {
+	text-align: left;
+	font-size: 16px;
+	font-family: ArvoRegular, 'Lucida Sans', Helvetica, Arial, sans-serif;
+	color: #999;
+}
+
 #opacsplit, .opacsplit {
 	position: absolute;
 	top: 300px;
