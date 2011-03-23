@@ -118,6 +118,17 @@
 			});
 		},
 
+		scrollDownTriggerInit: function(section) {
+			section.children('h1').data('starttop', section.children('h1').position().top);
+		},
+
+		scrollDownTrigger: function(section, percent) {
+			var perc = 1-percent;
+			section.children('h1').css({
+				top: section.children('h1').data('starttop') - 500*perc
+			});
+		},
+
 		flipLinesTriggerInit: function(section) {
 			$(section).children().each(function() {
 				$(this).data('starttop', $(this).position().top);
@@ -137,12 +148,12 @@
 			})
 		},
 
-		fadeInOutTriggerInit: function(section) {
-			$('p', section).hide();
-		},
-
 		fadeInOutTrigger: function(section, percent) {
-			percent < 1 ? $('p', section).fadeIn() : $('p', section).fadeOut();
+			if ($.oceaster.withinSection(section)) {
+				percent < 1 ? section.fadeIn('slow') : section.fadeOut('slow');
+			} else {
+				section.fadeOut('slow');
+			}
 		},
 
 		withinSection: function(section) {

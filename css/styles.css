@@ -34,10 +34,6 @@ Article placements
 #sec2art2 { top: 3570px; }
 #sec2art3 { top: 4390px; }
 #sec2art4 { top: 4646px; }
-#sec2art5 { top: 4985px; }
-#sec2art6 { top: 5314px; }
-#sec2art7 { top: 5641px; }
-#sec2art8 { top: 5969px; }
 #sec2art9 { top: 6488px; }
 #sec2art10 { top: 6624px; }
 #sec2art11 { top: 7891px; }
@@ -70,6 +66,23 @@ flip lines
 #sec1art4 hgroup h2 {
 	margin-bottom: 20px;
 }
+
+/*
+scroll down
+*/
+#sec2art1 h1 {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+}
+
+/*
+
+*/
+#sec2art4 p {
+	position: absolute;
+}
+
 
 /*
 Headers
