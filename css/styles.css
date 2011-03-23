@@ -13,12 +13,15 @@ body, html {
 	height: 22000px;
 }
 section {
-	
+	display: block;
 	position: relative;
+	width: 100%;
 }
 section article {
-	
-	position: relative;
+	display: block;
+	position: absolute;
+	width: 100%;
+	left: 0;
 }
 /*
 Article placements
