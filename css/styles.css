@@ -139,6 +139,19 @@ implode
 	top: 0;
 }
 
+/*
+rotate
+*/
+#sec2art11 #cycle {
+	position: relative;
+}
+#sec2art11 p {
+	position: absolute;
+	text-align: center;
+	top: 250px;
+	width: 100%;
+}
+
 
 /*
 Headers

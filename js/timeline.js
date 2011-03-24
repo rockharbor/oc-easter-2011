@@ -249,11 +249,11 @@
 			var img = new Image();
 			img.src = 'img/paintmedication.png';
 			var cycle = $('#cycle', section);
-			cycle.children('p').fadeOut();
+			cycle.children('p').css({opacity: 0});
 
 			img.onload = function() {
 				var canvas = cycle.children('canvas');
-				var time = 1;
+				var time = 5;
 				var context = canvas[0].getContext('2d');
 				context.save();
 
@@ -281,7 +281,11 @@
 
 						amt += 1;
 						if (amt >= 180) {
-							cycle.children('p').fadeOut(function() {
+							cycle.children('p').animate({
+								opacity: 0
+							},
+							function() {
+								cycle.children('p').css({marginTop: 0});
 								setTimeout(_rotate, 5000);
 							});
 							return;
@@ -289,8 +293,10 @@
 						setTimeout(_drawRotate, time, amt);
 					}
 
-					cycle.children('p').fadeIn();
-					cycle.children('p').animate({marginTop: '-=20px'}, function() {
+					cycle.children('p').animate({
+						marginTop: '-=20px',
+						opacity: 1
+					}, function() {
 						_drawRotate(0);
 					});
 				}
