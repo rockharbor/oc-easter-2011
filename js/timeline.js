@@ -91,18 +91,16 @@
 
 		followerTrigger: function(section, percent) {
 			if ($.oceaster.withinSection(section)) {
-
-				section.css({
-					top: section.data('starttop') + 500*percent,
-					opacity: percent / .6
-				});
-				section.siblings('h1').css({
-					top: section.position().top
-				});
+				if (section.is(':hidden')) {
+					section.fadeIn();
+				}
+				var newtop = section.data('starttop') + 500*percent;
+				section.clearQueue().animate({top: newtop});
+				section.siblings('h1').clearQueue().animate({top: newtop});
 			} else {
-				section.css({
-					opacity: 0
-				});
+				if (!section.is(':hidden')) {
+					section.fadeOut();
+				}
 			}
 		},
 
