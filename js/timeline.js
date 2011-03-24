@@ -318,6 +318,9 @@
 		},
 
 		_draw: function(event) {
+			if (!$('#scratch-hint').is(':hidden')) {
+				$('#scratch-hint').fadeOut();
+			}
 			var context = $.oceaster.scratch[0].getContext('2d');
 			context.globalCompositeOperation = 'destination-out';
 
@@ -331,7 +334,6 @@
 					context.drawImage($.oceaster.brush, mouseX-this.width/2, mouseY-this.height/2);
 				}
 			} else {
-				console.log($.oceaster.brush.width);
 				context.drawImage($.oceaster.brush, mouseX-$.oceaster.brush.width/2, mouseY-$.oceaster.brush.height/2);
 			}
 		},
