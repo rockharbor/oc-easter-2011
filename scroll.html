@@ -10,11 +10,34 @@
 		<script type="text/javascript" src="js/paint.js"></script>
 		<script type="text/javascript" src="js/timeline.js"></script>
 		<script type="text/javascript">
+			var hint;
+			function hideHint() {
+				clearTimeout(hint);
+				$('#scroll').fadeOut();
+				$(window).unbind('scroll', hideHint);
+			}
+			function showHint() {
+				if ($(window).scrollTop() > 0) {
+					return;
+				}
+				$('#scroll').show().css({
+					bottom: $('#scroll').css('bottom') - 20,
+					opacity: 0
+				});
+				$('#scroll').animate({
+					bottom: 0,
+					opacity: 1
+				});
+			}
+				
 			$(document).ready(function() {
 				window.setTimeout(function() {
 					$.oceaster.init();
 					$(window).bind('scroll', $.oceaster.update);
 				}, 1);
+				
+				hint = setTimeout('showHint()', 5000);
+				$(window).bind('scroll', hideHint);
 			});
 		</script>
 		<link rel="stylesheet" type="text/css" href="css/reset.css" />
@@ -29,6 +52,7 @@
 					<article id="sec1art1">
 						<h1>Remember life as a kid?</h1>
 						<p>Yes, crayons, goldfish, and stickers ruled the day.<br />But not just that...</p>
+						<p id="scroll">Scroll Down</p>
 					</article>
 					<article id="sec1art2">
 						<h1>Remember how different it <span class="blue">felt</span>?</h1>
