@@ -346,7 +346,7 @@
 			$('body').append('<div id="_trigger"></div>');
 			$('#_debug').css({
 				position:'fixed',
-				top: 0,
+				bottom: 0,
 				right: 0,
 				background: '#ff0000',
 				color: '#fff',
