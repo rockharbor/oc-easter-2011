@@ -85,18 +85,16 @@
 			});
 		},
 
-		followerTriggerInit: function(section) {
-			section.data('starttop', section.position().top);
-		},
-
 		followerTrigger: function(section, percent) {
 			if ($.oceaster.withinSection(section)) {
 				if (section.is(':hidden')) {
 					section.fadeIn();
 				}
-				var newtop = section.data('starttop') + 500*percent;
-				section.clearQueue().animate({top: newtop});
-				section.siblings('h1').clearQueue().animate({top: newtop});
+				if (section.siblings('h1').css('top') != section.position().top) {
+					section.siblings('h1').clearQueue().animate({
+						top: section.position().top
+					});
+				}
 			} else {
 				if (!section.is(':hidden')) {
 					section.fadeOut();
