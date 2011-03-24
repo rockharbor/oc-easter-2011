@@ -10,7 +10,7 @@ body, html {
 	text-align: center;
 	width: 900px;
 	margin: auto;
-	height: 14000px;
+	height: 15000px;
 }
 section {
 	display: block;
@@ -36,13 +36,13 @@ Article placements
 #sec2art4 { top: 4646px; }
 #sec2art9 { top: 6488px; }
 #sec2art10 { top: 7891px; }
-#sec2art11 { top: 7982px; }
-#sec2art12 { top: 8940px; }
-#sec3art1 { top: 9133px; }
-#sec3art2 { top: 9883px; }
-#sec3art3 { top: 10487px; }
-#sec3art4 { top: 10679px; }
-#sec3art5 { top: 13403px; }
+#sec2art11 { top: 8940px; }
+#sec2art12 { top: 9533px; }
+#sec3art1 { top: 10033px; }
+#sec3art2 { top: 10683px; }
+#sec3art3 { top: 11287px; }
+#sec3art4 { top: 11679px; }
+#sec3art5 { top: 14600px; }
 
 /*
 flip lines

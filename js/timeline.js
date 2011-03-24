@@ -245,6 +245,63 @@
 
 		},
 
+		rotateTriggerInit: function(section) {
+			var img = new Image();
+			img.src = 'img/paintmedication.png';
+			var cycle = $('#cycle', section);
+			cycle.children('p').fadeOut();
+
+			img.onload = function() {
+				var canvas = cycle.children('canvas');
+				var time = 1;
+				var context = canvas[0].getContext('2d');
+				context.save();
+
+				var _rotate = function() {
+					var _drawRotate = function(amt) {
+						context.restore();
+						context.save();
+						context.clearRect(0, 0, canvas.width(), canvas.height());
+
+						context.beginPath();
+						context.fillStyle = 'rgba(200,0,0,.2);'
+						context.rect(0, 0, canvas.width(), canvas.height()/2);
+						context.clip();
+
+						context.translate(canvas.width()/2, canvas.height()/2);
+						context.rotate((Math.PI/180) * amt);
+						context.translate(-canvas.width()/2, -canvas.height()/2);
+
+						context.drawImage(img, canvas.width()/2-img.width/2, canvas.height()/2-img.height-50);
+						context.save();
+						context.translate(canvas.width(), canvas.height());
+						context.scale(-1, -1);
+						context.drawImage(img, canvas.width()/2-img.width/2, canvas.height()/2-img.height-50);
+						context.restore();
+
+						amt += 1;
+						if (amt >= 180) {
+							cycle.children('p').fadeOut(function() {
+								setTimeout(_rotate, 5000);
+							});
+							return;
+						}
+						setTimeout(_drawRotate, time, amt);
+					}
+
+					cycle.children('p').fadeIn();
+					cycle.children('p').animate({marginTop: '-=20px'}, function() {
+						_drawRotate(0);
+					});
+				}
+				_rotate();
+			}
+		},
+
+		rotateTrigger: function() {
+
+		},
+
 		withinSection: function(section) {
 			var scrollY = $(window).scrollTop();
 			return scrollY > section.data('oceaster.start') && scrollY < section.data('oceaster.end');
