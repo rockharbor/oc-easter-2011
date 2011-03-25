@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>OC Easter</title>
+		<meta charset="utf-8" />
+		<meta name="title" content="OC Easter" />
+		<meta name="description" content="An Easter celebration of Jesus and His freedom at the OC Fairgrounds in Costa Mesa, California." />
+		<meta name="keywords" content="oc, orange county, easter, fairgrounds, francis chan, rockharbor, oc easter, pacific amphitheatre, freedom, jesus" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.countdown.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('#countdown').countdown({
+					until: new Date(2011, 2, 29, 13, 0, 0),
+					layout: '<div><span class="amount">{dn}</span><span class="desc">days</span></div>\n\
+								<div><span class="amount">{hnn}</span><span class="desc">hours</span></div>\n\
+								<div><span class="amount">{sep}</span><span class="desc">&nbsp;</span></div>\n\
+								<div><span class="amount">{mnn}</span><span class="desc">minutes</span></div>\n\
+								<div><span class="amount">{sep}</span><span class="desc">&nbsp;</span></div>\n\
+								<div><span class="amount">{snn}</span><span class="desc">seconds</span></div>'
+				});
+			});
+		</script>
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-7415608-5']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+			 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/960.css" />
+		<link rel="stylesheet" type="text/css" href="css/fonts.css" />
+		<link rel="stylesheet" type="text/css" href="css/counter.css" />
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="counter">
+				<header><h1>Coming Soon</h1></header>
+				<section id="countdown"></section>
+				<p><a href="http://www.facebook.com/event.php?eid=208676585810729">RSVP on Facebook</a></p>
+			</div>
+		</div>
+	</body>
+</html>
