@@ -153,7 +153,7 @@
 				$('canvas', section)[0].height = img.height;
 				
 				ctx.beginPath();
-				ctx.rect(0, img.height*percent + 1, img.width, 80);
+				ctx.rect(0, img.height*percent + 1, img.width, 120);
 				ctx.clip();
 				ctx.drawImage(img, 0, 0);
 			}
@@ -249,7 +249,7 @@
 
 			img.onload = function() {
 				var canvas = cycle.children('canvas');
-				var time = 5;
+				var time = 1;
 				var context = canvas[0].getContext('2d');
 				context.save();
 
@@ -276,13 +276,13 @@
 						context.restore();
 
 						amt += 1;
-						if (amt >= 180) {
+						if (amt >= 183) {
 							cycle.children('p').animate({
 								opacity: 0
 							},
 							function() {
 								cycle.children('p').css({marginTop: 0});
-								setTimeout(_rotate, 5000);
+								setTimeout(_rotate, 1000);
 							});
 							return;
 						}

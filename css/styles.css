@@ -10,7 +10,7 @@ body, html {
 	text-align: center;
 	width: 900px;
 	margin: auto;
-	height: 12200px;
+	height: 13200px;
 }
 section {
 	display: block;
@@ -70,9 +70,12 @@ layouts
 #sec2art2 h1 {
 	margin-bottom: 30px;
 }
+#sec2art4 hgroup h1 {
+	font-size: 60px;
+}
 #sec2art4 hgroup {
-	left: 290px;
-	width: 300px;
+	left: 270px;
+	width: 400px;
 	position: absolute;
 }
 #sec2art9 {
@@ -107,6 +110,8 @@ flip lines
 }
 #sec1art4 hgroup h2 {
 	margin-bottom: 20px;
+	font-size: 60px;
+	line-height: 60px;
 }
 
 /*
