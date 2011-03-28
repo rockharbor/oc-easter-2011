@@ -144,6 +144,11 @@ layouts
 #sec2art12 h1 {
 	text-align: center;
 }
+#sec3art1 div {
+	position: absolute;
+	top: 50px;
+	left: 0;
+}
 
 /*
 flip lines
