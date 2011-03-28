@@ -22,6 +22,63 @@ section article {
 	position: absolute;
 	width: 100%;
 }
+
+/*
+nav
+*/
+#header {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 0px;
+}
+#header h1 {
+	text-indent: -9999px;
+	background: url('../img/easter2011_siteheader.png') no-repeat;
+	height: 100px;
+	width: 261px;
+}
+nav {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+nav h1 {
+	padding: 8px;
+	color: #fff !important;
+	background: #000;
+	font-size: 20px;
+	cursor: pointer;
+	width: 50px;
+	float: right;
+	text-align: center;
+	margin-bottom: 10px;
+}
+nav:hover ul {
+	display: block;
+}
+nav ul {
+	display: none;
+	list-style: none;
+	clear:both;
+}
+nav ul li {
+	font-size: 18px;
+	font-family: ArvoRegular, 'Lucida Sans', Helvetica, Arial, sans-serif;
+	color: #999;
+	padding: 5px;
+	text-align: right;
+}
+nav a {
+	color: #999;
+	padding: 5px;
+	text-decoration: none;
+}
+nav ul li a:hover {
+	color: #fff;
+	background: #00ffd0;
+}
+
 /*
 Article placements
 */
@@ -140,13 +197,13 @@ mask
 */
 #sec2art10 canvas {
 	position: absolute;
-	top: 0px;
+	top: 30px;
 	left: -330px;
 }
 #sec2art10 hgroup {
 	left: -30px;
 	position: absolute;
-	top: 100px;
+	top: 130px;
 	z-index: 1;
 }
 #sec2art10 hgroup h2 {
@@ -171,7 +228,7 @@ scratch
 */
 #sec3art5 canvas {
 	position: absolute;
-	left: 24px;
+	left: -24px;
 }
 #sec3art5 #scratch-hint {
 	position: absolute;
@@ -181,6 +238,14 @@ scratch
 }
 #sec3art5 #scratch-hint p {
 	font-size: 12px;
+}
+#sec3art5 .after {
+	display: none;
+	position: absolute;
+	top: 470px;
+	left:0;
+	width: 100%;
+	text-align:center;
 }
 
 /*
@@ -249,4 +314,26 @@ p {
 	color: #999;
 	margin-bottom: 10px;
 	line-height: 25px;
+}
+.page {
+	padding: 50px;
+}
+.page h1 {
+	color: #00ffd0;
+	margin-bottom: 20px;
+}
+a {
+	color: #ff663f;
+}
+a.button {
+	font-family: Helvetica, Arial, sans-serif;
+	background: #00ffd0;
+	color: #fff;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	padding: 5px 10px;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: uppercase;
 }

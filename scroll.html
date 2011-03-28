@@ -4,8 +4,8 @@
 		<title>OC Easter</title>
 		<meta charset="utf-8" />
 		<meta name="title" content="OC Easter" />
-		<meta name="description" content="Orange County Easter celebration at the Fairgrounds" />
-		<meta name="keywords" content="orange county, easter, fairgrounds, francis chan" />
+		<meta name="description" content="An Easter celebration of Jesus and His freedom at the OC Fairgrounds in Costa Mesa, California." />
+		<meta name="keywords" content="oc, orange county, easter, fairgrounds, francis chan, rockharbor, oc easter, pacific amphitheatre, freedom, jesus" />
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/paint.js"></script>
 		<script type="text/javascript" src="js/timeline.js"></script>
@@ -31,6 +31,7 @@
 			}
 				
 			$(document).ready(function() {
+				$.oceaster._debug = false;
 				window.setTimeout(function() {
 					$.oceaster.init();
 					$(window).bind('scroll', $.oceaster.update);
@@ -40,6 +41,17 @@
 				$(window).bind('scroll', hideHint);
 			});
 		</script>
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-7415608-5']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+			 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
 		<link rel="stylesheet" type="text/css" href="css/reset.css" />
 		<link rel="stylesheet" type="text/css" href="css/960.css" />
 		<link rel="stylesheet" type="text/css" href="css/fonts.css" />
@@ -48,6 +60,18 @@
 	<body>
 		<div id="wrapper">
 			<div id="content">
+				<header id="header"><h1 class="red">OC Easter</h1></header>
+				<nav data-scrolltrigger="navTrigger" data-triggerstart="100" data-triggerend="15000">
+					<h1>Menu</h1>
+					<ul>
+						<li><a href="about.html">About</a></li>
+						<li><a href="whattoexpect.html">What to expect</a></li>
+						<li><a href="whywecelebrate.html">Why we celebrate</a></li>
+						<li><a href="kids.html">Kids</a></li>
+						<li><a href="churchdirectory.html">Church directory</a></li>
+						<li><a href="directions.html">Directions</a></li>
+					</ul>
+				</nav>
 				<section>
 					<article id="sec1art1">
 						<h1>Remember life as<br/><span class="white">a kid?</span></h1>
@@ -68,7 +92,7 @@
 					<article id="sec1art4">
 						<h1>Words<br/>like</h1>
 						<div class="background"><img src="img/arrow_one.png" height="28" width="171" /></div>
-						<hgroup data-scrolltrigger="flipLinesTrigger" data-triggerstart="1700" data-triggerend="2000">
+						<hgroup data-scrolltrigger="flipLinesTrigger" data-triggerstart="1700" data-triggerend="2200">
 							<h2 class="red">Failure</h2>
 							<h2 class="red">Inadequate</h2>
 							<h2 class="red">Ugly</h2>
@@ -99,11 +123,12 @@
 						<p style="top: 1360px; right: 0;" data-scrolltrigger="fadeInOutTrigger" data-triggerstart="5400" data-triggerend="5900">You lost a house.</p>
 					</article>
 					<article id="sec2art9" data-scrolltrigger="viewportTrigger" data-triggerstart="6000" data-triggerend="7200">
-						<h1>Or perhaps you experienced something that has</h1>
-						<p class="red">no place in this world</p>
+						<h1>Or perhaps you experienced something that has<br/>
+							<span class="red">no place in this world</span>
+						</h1>
 						<canvas class="viewport"><img src="img/degression.png" height="720" width="309" alt="Abuse, Rape, Abandonment" /></canvas>
 					</article>
-					<article id="sec2art10" data-scrolltrigger="maskTrigger" data-triggerstart="7200" data-triggerend="8300">
+					<article id="sec2art10" data-scrolltrigger="maskTrigger" data-triggerstart="7230" data-triggerend="8330">
 						<p>And so what often happens is that instead of grabbing hold of the things that give us life...we settle for anything that promises to <span class="red"><br/>numb the pain</span></p>
 						<hgroup>
 							<h2>Alcohol</h2>
@@ -129,9 +154,11 @@
 
 				<section>
 					<article id="sec3art1">
-						<h1>What if there was a way to get it all back?</h1>
-						<p class="white">Not just the feeling you had as a kid...</p>
-						<p class="white">But what if there was a way to once again grab hold of what it means to truly live?</p>
+						<h1 data-scrolltrigger="fadeInOutTrigger" data-triggerstart="9500" data-triggerend="9700">What if there was a way for more?</h1>
+						<div data-scrolltrigger="fadeInOutTrigger" data-triggerstart="9700" data-triggerend="10000">
+							<p class="white">Not just the feeling you had as a kid...</p>
+							<p class="white">But what if there was a way to grab hold of what it means to truly live?</p>
+						</div>
 					</article>
 					<article id="sec3art4">
 						<hgroup>
@@ -146,7 +173,8 @@
 					</article>
 					<article id="sec3art5" data-scrolltrigger="scratchTrigger" data-triggerstart="15500" data-triggerend="15500">
 						<div id="scratch-hint"><p>[paint here]</p></div>
-						<canvas id="scratch" width="852" height="441"><img src="img/scratch.png" height="441" width="852" alt="Freedom" style="background:url('img/scratch_background.png') no-repeat" /></canvas>
+						<canvas id="scratch" width="952" height="441"><img src="img/scratch.png" height="441" width="852" alt="Freedom" style="background:url('img/scratch_background.png') no-repeat" /></canvas>
+						<p class="after"><a href="about.html" class="button">Easter at the Pacific Amphitheatre</a></p>
 					</article>
 				</section>
 			</div>

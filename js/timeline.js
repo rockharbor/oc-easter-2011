@@ -128,7 +128,16 @@
 					var self = $(this);
 					self.parent(':not(:animated)').animate({scrollTop: self.data('starttop')});
 				}
-			})
+			});
+			if (!$.oceaster.withinSection(section)) {
+				var scrollto;
+				if (percent == 0) {
+					scrollto = $(section).children(':first');
+				} else {
+					scrollto = $(section).children(':last');
+				}
+				scrollto.parent(':not(:animated)').animate({scrollTop: scrollto.data('starttop')});
+			}
 		},
 
 		viewportTriggerInit: function(section) {
@@ -231,6 +240,11 @@
 				scratchContext.fillRect(0, 0, $.oceaster.scratch.width(), $.oceaster.scratch.height());
 
 				$.oceaster.scratch.click($.oceaster._draw);
+				$.oceaster.scratch.one('click', function() {
+					setTimeout(function() {
+						$('.after', section).fadeIn();
+					}, 5000);
+				});
 				$.oceaster.scratch.mousedown($.oceaster._startDrag);
 				$.oceaster.scratch.mouseup($.oceaster._stopDrag);
 				$.oceaster.scratch.mouseleave($.oceaster._stopDrag);
@@ -302,6 +316,14 @@
 
 		rotateTrigger: function() {
 
+		},
+
+		navTrigger: function(section, percent) {
+			if (percent == 0) {
+				section.css({position: 'absolute', top: 100});
+			} else {
+				section.css({position: 'fixed', top: 0});
+			}
 		},
 
 		withinSection: function(section) {
