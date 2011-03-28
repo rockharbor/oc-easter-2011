@@ -280,7 +280,7 @@
 
 		rotateTriggerInit: function(section) {
 			var img = new Image();
-			img.src = 'img/paintmedication.png';
+			img.src = 'img/painmedication.png';
 			var cycle = $('#cycle', section);
 			cycle.children('p').css({opacity: 0});
 
@@ -313,7 +313,7 @@
 						context.restore();
 
 						amt += 1;
-						if (amt >= 183) {
+						if (amt >= 180) {
 							cycle.children('p').animate({
 								opacity: 0
 							},
