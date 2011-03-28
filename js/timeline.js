@@ -53,6 +53,9 @@
 
 		fadeByWordTrigger: function(section, percent) {
 			if ($.oceaster.withinSection(section)) {
+				if (section.children(':animated').length > 0) {
+					return;
+				}
 				var showNext = function() {
 					section.children(':hidden:first').fadeIn(showNext)
 				}
