@@ -7,7 +7,6 @@
 		<meta name="description" content="An Easter celebration of Jesus and His freedom at the OC Fairgrounds in Costa Mesa, California." />
 		<meta name="keywords" content="oc, orange county, easter, fairgrounds, francis chan, rockharbor, oc easter, pacific amphitheatre, freedom, jesus" />
 		<script type="text/javascript" src="js/jquery.js"></script>
-		<script type="text/javascript" src="js/paint.js"></script>
 		<script type="text/javascript" src="js/timeline.js"></script>
 		<script type="text/javascript">
 			var hint;
