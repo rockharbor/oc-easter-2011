@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+if (!isset($_GET['url'])) {
+	$_GET['url'] = 'scroll';
+}
+$url = $_GET['url'].'.php';
+?><!DOCTYPE html>
 <html>
 	<head>
 		<title>OC Easter</title>
@@ -7,6 +12,7 @@
 		<meta name="description" content="An Easter celebration of Jesus and His freedom at the OC Fairgrounds in Costa Mesa, California." />
 		<meta name="keywords" content="oc, orange county, easter, fairgrounds, francis chan, rockharbor, oc easter, pacific amphitheatre, freedom, jesus" />
 		<script type="text/javascript" src="js/jquery.js"></script>
+		<?php if(!(isset($_GET['url']) && $_GET['url'] != 'scroll')): ?>
 		<script type="text/javascript" src="js/timeline.js"></script>
 		<script type="text/javascript">
 			var hint;
@@ -30,7 +36,6 @@
 			}
 				
 			$(document).ready(function() {
-				$.oceaster._debug = false;
 				window.setTimeout(function() {
 					$.oceaster.init();
 					$(window).bind('scroll', $.oceaster.update);
@@ -40,6 +45,7 @@
 				$(window).bind('scroll', hideHint);
 			});
 		</script>
+		<?php endif; ?>
 		<script type="text/javascript">
 			/*var _gaq = _gaq || [];
 			_gaq.push(['_setAccount', 'UA-7415608-5']);
@@ -57,15 +63,13 @@
 		<link rel="stylesheet" type="text/css" href="css/styles.css" />
 	</head>
 	<body>
-		<div id="wrapper" class="<?php echo isset($_GET['url']) && $_GET['url'] != 'scroll' ? 'page' : 'scroll'; ?>">
+		<div id="wrapper" class="<?php echo $url != 'scroll.php' ? 'page' : 'scroll'; ?>">
 			<div id="content">
-				<header id="header"><h1 class="red">OC Easter</h1></header>
+				<header id="header"><?php
+				echo $url != 'scroll.php' ? '<a href="/"><h1>OC Easter</h1></a>' : '<h1>OC Easter</h1>';
+				?></header>
 				<?php include 'nav.php'; ?>
 				<?php
-				if (!isset($_GET['url'])) {
-					$_GET['url'] = 'scroll';
-				}
-				$url = $_GET['url'].'.php';
 				if (file_exists("pages/$url")) {
 					include "pages/$url";
 				} else {

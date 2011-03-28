@@ -100,6 +100,6 @@
 	<article id="sec3art5" data-scrolltrigger="scratchTrigger" data-triggerstart="15500" data-triggerend="15500">
 		<div id="scratch-hint"><p>[paint here]</p></div>
 		<canvas id="scratch" width="952" height="441"><img src="img/scratch.png" height="441" width="852" alt="Freedom" style="background:url('img/scratch_background.png') no-repeat" /></canvas>
-		<p class="after"><a href="about.html" class="button" style="font-size: 14px;">Easter at the Pacific Amphitheatre</a></p>
+		<p class="after"><a href="/about" class="button" style="font-size: 14px;">Easter at the Pacific Amphitheatre</a></p>
 	</article>
 </section>
