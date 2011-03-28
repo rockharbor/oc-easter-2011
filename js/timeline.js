@@ -2,7 +2,7 @@
 
 	$.oceaster = {
 
-		_debug: true,
+		_debug: false,
 
 		init: function() {
 			$.oceaster._setupDebug();
