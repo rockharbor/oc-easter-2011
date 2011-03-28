@@ -2,7 +2,7 @@
 	<article id="sec1art1">
 		<h1>Remember life as<br/><span class="white">a kid?</span></h1>
 		<p>Yes, crayons, goldfish, and stickers ruled the day.</p><p>But not just that...</p>
-		<p id="scroll">Scroll Down</p>
+		<p id="scroll"><img src="img/scroll-down.png" width="95" height="43" alt="Scroll Down" /></p>
 		<div class="background"><img src="img/splatter_1.png" height="347" width="347" /></div>
 	</article>
 	<article id="sec1art2">

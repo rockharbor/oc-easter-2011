@@ -75,7 +75,7 @@ nav ul {
 	clear:both;
 }
 nav ul li {
-	font-size: 18px;
+	font-size: 15px;
 	font-family: ArvoRegular, 'Lucida Sans', Helvetica, Arial, sans-serif;
 	color: #999;
 	padding: 5px;
@@ -205,7 +205,7 @@ viewport
 }
 #sec2art9 canvas {
 	position: absolute;
-	top: 100px;
+	top: 130px;
 	left: 0;
 }
 
@@ -307,6 +307,7 @@ h1, h2, h3 {
 	font-family: BebasNeueRegular, 'Lucida Sans', Helvetica, Arial, sans-serif;
 	color: #000;
 	text-align: left;
+	font-weight: normal;
 }
 .inverse h1, .inverse h2 {
 	color: #fff;
@@ -324,6 +325,9 @@ Global
 .white {
 	color: #fff;
 }
+.bebas {
+	font-family: BebasNeueRegular, 'Lucida Sans', Helvetica, Arial, sans-serif;
+}
 p {
 	text-align: left;
 	font-size: 21px;
@@ -336,8 +340,9 @@ p {
 	text-align: left;
 }
 .page p {
-	font-size: 15px;
+	font-size: 14px;
 	margin-bottom: 10px;
+	line-height: 22px;
 }
 .page section h1, .page section h2 {
 	color: #fff;
@@ -372,4 +377,23 @@ a.button {
 	font-weight: bold;
 	text-decoration: none;
 	text-transform: uppercase;
+}
+
+.easter {
+	display: block;
+	width: 447px;
+	height: 238px;
+	background: url('../img/details.png') no-repeat;
+	text-indent: -9999px;
+}
+.celebrate {
+	display: block;
+	width: 374px;
+	height: 189px;
+	background: url('../img/whywecelebrate.png') no-repeat;
+	text-indent: -9999px;
+}
+
+.church {
+	margin-bottom: 30px;
 }

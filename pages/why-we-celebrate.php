@@ -9,6 +9,6 @@
 		<p>Generations later, Jesus invaded the world. From His birth in a simple manger…to His teachings that He was the only way to God…to His life that offered an entirely new way of looking at the world, Jesus was a revolutionary. He was a threat to the established order of things.</p>
 		<p>Eventually, He was killed for being that threat. He was nailed to a cross and crucified as the redeeming sacrifice for all of humanity. But three days later, He rose from the dead…restoring the path to God and to life.</p>
 		<p>Through Jesus, we can have once again have freedom and life as God intended it.</p>
-		<p>That&apos;s why we celebrate.</p>
+		<p class="celebrate">That&apos;s why we celebrate.</p>
 	</article>
 </section>
