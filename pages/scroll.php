@@ -50,7 +50,7 @@
 	</article>
 	<article id="sec2art9" data-scrolltrigger="viewportTrigger" data-triggerstart="6000" data-triggerend="7200">
 		<h1>Or perhaps you experienced something that has<br/>
-			<span class="red">no place in this world</span>
+			<span class="red" data-scrolltrigger="fadeByWordTrigger" data-triggerstart="5800" data-triggerend="7200">no place in this world</span>
 		</h1>
 		<canvas class="viewport"><img src="img/degression.png" height="720" width="309" alt="Abuse, Rape, Abandonment" /></canvas>
 	</article>
@@ -100,6 +100,6 @@
 	<article id="sec3art5" data-scrolltrigger="scratchTrigger" data-triggerstart="15500" data-triggerend="15500">
 		<div id="scratch-hint"><p>[paint here]</p></div>
 		<canvas id="scratch" width="952" height="441"><img src="img/scratch.png" height="441" width="852" alt="Freedom" style="background:url('img/scratch_background.png') no-repeat" /></canvas>
-		<p class="after"><a href="about.html" class="button">Easter at the Pacific Amphitheatre</a></p>
+		<p class="after"><a href="about.html" class="button" style="font-size: 14px;">Easter at the Pacific Amphitheatre</a></p>
 	</article>
 </section>

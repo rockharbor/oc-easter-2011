@@ -42,6 +42,26 @@
 			});
 		},
 
+		fadeByWordTriggerInit: function(section) {
+			var classes = section[0]['className'];
+			section
+				.html('<span>'+section.html().split(/\s/).join('&nbsp;</span><span>')+'</span>')
+				.addClass(classes)
+			.children()
+				.hide();
+		},
+
+		fadeByWordTrigger: function(section, percent) {
+			if ($.oceaster.withinSection(section)) {
+				var showNext = function() {
+					section.children(':hidden:first').fadeIn(showNext)
+				}
+				showNext();
+			} else {
+				section.children().fadeOut();
+			}
+		},
+
 		implodeTriggerInit: function(section) {
 			var c = 1;
 			for (var i=1; i<7; i++) {
