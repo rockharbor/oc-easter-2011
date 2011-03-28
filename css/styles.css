@@ -10,7 +10,7 @@ body, html {
 	text-align: center;
 	width: 900px;
 	margin: auto;
-	height: 13200px;
+	height: 12700px;
 }
 section {
 	display: block;
@@ -54,6 +54,7 @@ nav {
 	position: absolute;
 	top: 0;
 	right: 0;
+	z-index:100;
 }
 nav h1 {
 	padding: 8px;
@@ -98,7 +99,7 @@ Article placements
 #sec1art2 { top: 973px; left: 0; }
 #sec1art3 { top: 1497px; width: 400px; right: 0; }
 #sec1art4 { top: 2267px; left: 0; }
-#sec2art1 { top: 2979px; left: 0; }
+#sec2art1 { top: 3079px; left: 0; }
 #sec2art2 { top: 3570px; width: 720px; }
 #sec2art3 { top: 4390px; width: 380px; left: 260px; }
 #sec2art4 { top: 4646px; left: 0; }
@@ -205,7 +206,7 @@ viewport
 }
 #sec2art9 canvas {
 	position: absolute;
-	top: 130px;
+	top: 140px;
 	left: 0;
 }
 
@@ -263,6 +264,7 @@ scratch
 	left:0;
 	width: 100%;
 	text-align:center;
+	z-index: 6;
 }
 
 /*

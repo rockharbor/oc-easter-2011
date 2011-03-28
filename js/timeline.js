@@ -61,7 +61,7 @@
 				}
 				showNext();
 			} else {
-				section.children().fadeOut();
+				section.children().hide();
 			}
 		},
 
@@ -132,7 +132,7 @@
 		scrollDownTrigger: function(section, percent) {
 			var perc = 1-percent;
 			section.children('h1').css({
-				top: section.children('h1').data('starttop') - 500*perc
+				top: section.children('h1').data('starttop') - 650*perc
 			});
 		},
 
@@ -185,7 +185,7 @@
 				$('canvas', section)[0].height = img.height;
 				
 				ctx.beginPath();
-				ctx.rect(0, img.height*percent + 1, img.width, 120);
+				ctx.rect(0, (img.height+120)*percent + 1 - 120, img.width, 120);
 				ctx.clip();
 				ctx.drawImage(img, 0, 0);
 			}
@@ -251,6 +251,12 @@
 					bkgContext.drawImage(bkg, 0, 0);
 					$.oceaster.scratch.width = bkg.width;
 					$.oceaster.scratch.height = bkg.height;
+				
+      				var paint = new Image();
+      				paint.src = 'img/paint.png';
+      				paint.onload = function() {
+               			scratchContext.drawImage(paint, $.oceaster.scratch.width/2-paint.width/2, $.oceaster.scratch.height/2-paint.height/2);
+      				}
 				}
 
 				var secret = new Image();
@@ -263,13 +269,12 @@
 				scratchContext.fillRect(0, 0, $.oceaster.scratch.width(), $.oceaster.scratch.height());
 
 				$.oceaster.scratch.click($.oceaster._draw);
-				$.oceaster.scratch.one('click', function() {
+				$.oceaster.scratch.one('mouseover', function() {
 					setTimeout(function() {
 						$('.after', section).fadeIn();
 					}, 5000);
 				});
-				$.oceaster.scratch.mousedown($.oceaster._startDrag);
-				$.oceaster.scratch.mouseup($.oceaster._stopDrag);
+				$.oceaster.scratch.mouseover($.oceaster._startDrag);
 				$.oceaster.scratch.mouseleave($.oceaster._stopDrag);
 			}
 		},
@@ -297,7 +302,7 @@
 						context.clearRect(0, 0, canvas.width(), canvas.height());
 
 						context.beginPath();
-						context.fillStyle = 'rgba(200,0,0,.2);'
+						context.fillStyle = 'rgba(200,0,0,.5)'
 						context.rect(0, 0, canvas.width(), canvas.height()/2);
 						context.clip();
 
@@ -305,11 +310,11 @@
 						context.rotate((Math.PI/180) * amt);
 						context.translate(-canvas.width()/2, -canvas.height()/2);
 
-						context.drawImage(img, canvas.width()/2-img.width/2, canvas.height()/2-img.height-50);
+						context.drawImage(img, canvas.width()/2-img.width/2, canvas.height()/2-img.height-60);
 						context.save();
 						context.translate(canvas.width(), canvas.height());
 						context.scale(-1, -1);
-						context.drawImage(img, canvas.width()/2-img.width/2, canvas.height()/2-img.height-50);
+						context.drawImage(img, canvas.width()/2-img.width/2, canvas.height()/2-img.height-60);
 						context.restore();
 
 						amt += 1;
@@ -363,9 +368,6 @@
 		},
 
 		_draw: function(event) {
-			if (!$('#scratch-hint').is(':hidden')) {
-				$('#scratch-hint').fadeOut();
-			}
 			var context = $.oceaster.scratch[0].getContext('2d');
 			context.globalCompositeOperation = 'destination-out';
 
