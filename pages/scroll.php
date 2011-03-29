@@ -2,7 +2,7 @@
 	<article id="sec1art1">
 		<h1>Remember life as<br/><span class="white">a kid?</span></h1>
 		<p>Yes, crayons, goldfish, and stickers ruled the day.</p><p>But not just that...</p>
-		<p id="scroll"><img src="img/startscrolling.png" width="83" height="50" alt="Scroll Down" /></p>
+		<p id="scroll"><img src="img/scroll-down.png" width="95" height="43" alt="Scroll Down" /></p>
 		<div class="background"><img src="img/splatter_1.png" height="347" width="347" /></div>
 	</article>
 	<article id="sec1art2">
@@ -80,8 +80,8 @@
 
 <section>
 	<article id="sec3art1">
-		<h1 data-scrolltrigger="fadeInOutTrigger" data-triggerstart="9500" data-triggerend="9700">What if there was a way for more?</h1>
-		<div data-scrolltrigger="fadeInOutTrigger" data-triggerstart="9700" data-triggerend="10200">
+		<h1 data-scrolltrigger="fadeInOutTrigger" data-triggerstart="9500" data-triggerend="9800">What if there was a way for more?</h1>
+		<div data-scrolltrigger="fadeInOutTrigger" data-triggerstart="9800" data-triggerend="10200">
 			<p class="white">Not just the feeling you had as a kid...</p>
 			<p class="white">But what if there was a way to grab hold of what it means to truly live?</p>
 		</div>
