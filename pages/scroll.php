@@ -58,11 +58,11 @@
 		<p>So sometimes instead of grabbing hold of the things that give life...you settle for anything that promises to <span class="red"><br/>numb the pain</span></p>
 		<hgroup>
 			<h2>Alcohol</h2>
+			<h2>Isolation</h2>
 			<h2>Sex</h2>
-			<h2>Drugs</h2>
 			<h2>60-hour<br/>workweeks</h2>
 			<h2>Pornography</h2>
-			<h2>Cigarettes</h2>
+			<h2>Drugs</h2>
 		</hgroup>
 		<canvas><img src="img/splatter_4.png" height="807" width="670" /></canvas>
 	</article>
