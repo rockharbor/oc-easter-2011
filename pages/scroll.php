@@ -69,7 +69,7 @@
 	<article id="sec2art11" data-scrolltrigger="rotateTrigger" data-triggerstart="7500" data-triggerend="10000">
 		<h1>And life becomes this vicious cycle of</h1>
 		<div id="cycle">
-			<canvas width="500" height="500"><img src="img/paintmedication.png" height="127" width="346" alt="Pain and Medication" /></canvas>
+			<canvas width="500" height="500"><img src="img/painmedication.png" height="127" width="346" alt="Pain and Medication" /></canvas>
 			<p>and more</p>
 		</div>
 	</article>
