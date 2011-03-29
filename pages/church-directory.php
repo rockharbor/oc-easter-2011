@@ -60,11 +60,11 @@
 	Sundays | 10am<br />
 	[children's ministry available for infants – grade 5]</p>
 	<p><strong>ROCK</strong>HARBOR Fullerton<br />
-	Wilshire Auditorium, Fullerton College<br />
-	315 E. Wilshire Ave.<br />
+	Pacific Auditorium, Hope International University<br />
+	2500 Nutwood<br />
 	Fullerton, CA<br />
-	Sundays | 7pm &amp; 9pm<br />
-	[no children's ministry available]</p>
+	Sundays | 5pm &amp; 7:30pm<br />
+	[children&apos;s ministry available at 5pm]</p>
 	</div>
 	<h2>Irvine</h2>
 	<div class="church"><h3>New Song</h3>
