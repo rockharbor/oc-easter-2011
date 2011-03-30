@@ -15,34 +15,11 @@ $url = $_GET['url'].'.php';
 		<?php if(!(isset($_GET['url']) && $_GET['url'] != 'scroll')): ?>
 		<script type="text/javascript" src="js/timeline.js"></script>
 		<script type="text/javascript">
-			var hint;
-			function hideHint() {
-				clearTimeout(hint);
-				$('#scroll').fadeOut();
-				$(window).unbind('scroll', hideHint);
-			}
-			function showHint() {
-				if ($(window).scrollTop() > 0) {
-					return;
-				}
-				$('#scroll').show().css({
-					bottom: $('#scroll').css('bottom') - 20,
-					opacity: 0
-				});
-				$('#scroll').animate({
-					bottom: 0,
-					opacity: 1
-				});
-			}
-				
 			$(document).ready(function() {
 				window.setTimeout(function() {
 					$.oceaster.init();
 					$(window).bind('scroll', $.oceaster.update);
 				}, 1);
-				
-				hint = setTimeout('showHint()', 2000);
-				$(window).bind('scroll', hideHint);
 			});
 		</script>
 		<?php endif; ?>
@@ -66,7 +43,9 @@ $url = $_GET['url'].'.php';
 		<div id="wrapper" class="<?php echo $url != 'scroll.php' ? 'page' : 'scroll'; ?>">
 			<div id="content">
 				<header id="header"><?php
-				echo $url != 'scroll.php' ? '<a href="/"><h1>OC Easter</h1></a>' : '<h1>OC Easter</h1>';
+				if ($url != 'scroll.php') {
+      				echo '<a href="/"><h1>OC Easter</h1></a>';
+                   }
 				?></header>
 				<?php include 'nav.php'; ?>
 				<?php

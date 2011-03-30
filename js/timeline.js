@@ -41,6 +41,31 @@
 				$.oceaster[self.attr('data-scrolltrigger')](self, percent);
 			});
 		},
+		
+		introTriggerInit: function(section) {
+      		
+            setInterval(function() {
+            $('#scroll')
+           			.animate({
+     					bottom: -20
+      				})
+      				.animate({
+     					bottom: 0
+      				});
+            }, 3000);
+		},
+		
+		introTrigger: function(section) {
+      		if ($(window).scrollTop() == 0 && section.is(':hidden')) {
+          		section.fadeIn();
+          		$('#scroll').fadeIn();
+          		$('#why').fadeIn();
+          	} else if (!section.is(':hidden') && $(window).scrollTop() > 0) {
+               	section.fadeOut();
+               	$('#scroll').fadeOut();
+               	$('#why').fadeOut();
+          	}
+		},
 
 		fadeByWordTriggerInit: function(section) {
 			var classes = section[0]['className'];
@@ -347,11 +372,7 @@
 		},
 
 		navTrigger: function(section, percent) {
-			if (percent == 0) {
-				section.css({position: 'absolute', top: 100});
-			} else {
-				section.css({position: 'fixed', top: 0});
-			}
+			section.css({position: 'fixed', top: 0});
 		},
 
 		withinSection: function(section) {
