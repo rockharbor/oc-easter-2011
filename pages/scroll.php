@@ -1,7 +1,7 @@
 <section>
     <article id="introsec" data-scrolltrigger="introTrigger" data-triggerstart="0" data-triggerend="1">
       <img src="img/oceaster_header.png" width="455" height="195" alt="OC Easter" />
-      <h1>A county-wide celebration of the <span class="blue">freedom</span> found in the life, death and ressurection of Jesus Christ.</h1>
+      <h1>A county-wide celebration of the <span class="blue">freedom</span> found in the life, death and resurrection of Jesus Christ.</h1>
       <p>Sunday April 24, 9am and 11:15am<br />with Francis Chan<br />Pacific Amphitheatre at the OC Fairgrounds</p>
     </article>
 	<article id="sec1art1">
@@ -16,7 +16,7 @@
 		<div class="background"><img src="img/splatter_2.png" height="330" width="330" /></div>
 	</article>
 	<article id="sec1art3">
-		<h1>No matter what,<br /> no matter when,<br /> no matter where...</h1>
+		<h1>No matter <span class="blue">what</span>,<br /> no matter <span class="blue">when</span>,<br /> no matter <span class="blue">where</span>...</h1>
 		<p><br />You could do anything.</p>
 		<p>You could be anybody.</p>
 		<p>Everything was possible.</p>
