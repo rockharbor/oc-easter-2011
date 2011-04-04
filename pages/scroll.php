@@ -107,6 +107,15 @@
 	</article>
 	<article id="sec3art5" data-scrolltrigger="scratchTrigger" data-triggerstart="15500" data-triggerend="15500">
 		<canvas id="scratch" width="952" height="481"><img src="img/scratch.png" height="441" width="852" alt="Freedom" style="background:url('img/scratch_background.png') no-repeat" /></canvas>
-		<p class="after" style="font-size: 24px;width:100%; display:block;height:30px;color:#000;text-decoration:none;display:none"><span class="bebas">Easter at the Pacific Amphitheatre</span><br /><span style="font-size:18px;color:#999;margin-bottom:15px;display:block">Sunday, April 24, 9am &amp; 11:15am</span><a href="/about" class="button">Click here for more information</a></p>
+		<p class="after" style="font-size: 24px;width:100%; display:block;height:30px;color:#000;text-decoration:none;display:none">
+			<span class="bebas">Easter at the Pacific Amphitheatre</span>
+			<br />
+			<span style="font-size:18px;color:#999;margin-bottom:15px;display:block">Sunday, April 24, 9am &amp; 11:15am</span>
+			<a href="/about" class="button">Click here for more information</a><br />
+			<span style="font-family: Helvetica, Arial, sans-serif;color:#999;font-size: 11px;padding-top:40px;font-weight: bold;display:block;">SHARE ON:<br />
+				<a href="http://www.facebook.com/sharer.php?u=<?php echo urlencode('http://oceaster.com'); ?>&t=<?php echo urlencode('Come to Easter at the Pacific Amphitheatre'); ?>" target="_blank"><img src="img/fbook.png" height="42" width="42" /></a>
+				<a href="http://twitter.com/home?status=<?php echo urlencode('Come to Easter at the Pacific Amphitheatre http://oceaster.com'); ?>" target="_blank"><img src="img/tweeter.png" height="42" width="42" /></a>
+			</span>
+		</p>
 	</article>
 </section>
